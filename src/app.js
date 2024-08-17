@@ -18,3 +18,10 @@ app.use(cookieParser())
 export { app }
 
 
+//HTTP - Hyper Text Transfer Protocol
+/*
+URL, URI, URN
+
+
+*/
+
