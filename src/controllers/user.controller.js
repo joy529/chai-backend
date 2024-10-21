@@ -1,6 +1,7 @@
 import { asyncHandler } from "../utils/asyncHandler.js"; 
 import { ApiError } from "../utils/ApiError.js";
 import { User } from "../models/user.model.js";
+import { uploadOnCloudinary } from "../utils/cloudinary.js";
 
 
 
@@ -50,6 +51,12 @@ const registerUser = asyncHandler( async (req, res) => {
         throw new ApiError(400, "Avatar file is required");
     }
 
+    const avatar = await uploadOnCloudinary(avatarLocalPath) 
+    const coverImage = await uploadOnCloudinary(coverImageLocalPath)
+
+    if (!avatar) {
+        throw new ApiError(400, "Avatar file is required");
+    }
 
 })
 
