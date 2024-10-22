@@ -1,4 +1,4 @@
-// A JWT bearer, JSON Web Token (JWT), that is used as a bearer token.
+// // A JWT bearer, JSON Web Token (JWT), that is used as a bearer token.
 
 
 import mongoose, {Schema} from "mongoose";
@@ -80,6 +80,8 @@ userSchema.methods.generateAccessToken = function(){
         }
     )
 }
+
+
 userSchema.methods.generateRefreshToken = function(){
     return jwt.sign(
         {
@@ -94,6 +96,3 @@ userSchema.methods.generateRefreshToken = function(){
 }
 
 export const User = mongoose.model("User", userSchema)
-
-
-
