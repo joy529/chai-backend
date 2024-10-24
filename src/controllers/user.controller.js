@@ -224,7 +224,7 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
         .json(
             new ApiResponse(
                 200,
-                {accessToken, registerUser: newRefreshToken},
+                {accessToken, refreshToken: newRefreshToken},
                 "Access token refreshed"
             )
         )
@@ -234,6 +234,7 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
 
 
 })
+
 
 
 const changeCurrentPassword = asyncHandler(async(req, res) => {
